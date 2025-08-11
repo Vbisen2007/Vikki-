@@ -1,0 +1,27 @@
+| Layer           | Tech                                           |
+| --------------- | ---------------------------------------------- |
+| **Frontend**    | React + TailwindCSS (dark theme)               |
+| **Backend**     | Node.js (Express) + Socket.io for live results |
+| **Database**    | MongoDB Atlas (user, wallet, bet history)      |
+| **Wallet**      | Razorpay UPI + PayTM PG Link                   |
+| **Admin Panel** | Next.js + Ant Design                           |
+| **Deployment**  | Vercel (frontend) + Render/EC2 (backend)       |
+git clone https://github.com/iamsaief/color-prediction-game.git
+cd color-prediction-game
+npm install
+cp .env.example .env# .env
+# .env
+MONGO_URI=mongodb+srv://<user>:<pass>@cluster0.x.mongodb.net/bdg
+JWT_SECRET=supersecretjwt
+RAZORPAY_KEY_ID=rzp_test_xxx
+RAZORPAY_KEY_SECRET=yyyy
+FRONTEND_URL=https://yourdomain.vercel.app
+npm run dev          # backend on :5000
+cd client && npm i && npm start   # frontend on :3000
+git push render main  # or use AWS EC2 + PM2
+| Screen             | Component Path                 |
+| ------------------ | ------------------------------ |
+| Home / Betting     | `/client/src/pages/Home.jsx`   |
+| Wallet / Add Cash  | `/client/src/pages/Wallet.jsx` |
+| Refer & Earn       | `/client/src/pages/Refer.jsx`  |
+| Admin Result Panel | `/admin/src/pages/Result.jsx`  |
